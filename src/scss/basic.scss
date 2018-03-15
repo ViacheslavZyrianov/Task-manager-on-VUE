@@ -1,0 +1,58 @@
+$red: #c4222c;
+$green: #00713f;
+$blue: #214695;
+$yellow: #fcaa40;
+
+@import "reset";
+
+.task-manager{
+  display: block;
+  min-height: 100%;
+  background-color: #f7f2f2;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+h1{
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  text-transform: uppercase;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 auto 24px;
+}
+
+h2{
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+
+.task-list-type{
+  position: relative;
+  padding: 16px;
+
+  &.task-list-todo{
+    flex-basis: 70%;
+  }
+
+  &.task-list-done{
+    flex-basis: 30%;
+  }
+
+}
+
+.box-shadow{
+  box-shadow: 4px 4px 12px 2px rgba(0, 0, 0, .2);
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+}
+
+@import "btn";
+@import "form-elements";
+@import "popup";

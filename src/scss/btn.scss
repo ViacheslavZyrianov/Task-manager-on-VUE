@@ -1,0 +1,92 @@
+.btn{
+  position: relative;
+  border: 0;
+  color: #ffffff;
+  transition: background-color .3s;
+  padding: 8px 24px;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+  border-radius: 8px;
+
+  $lightenPercent: 10%;
+
+  .btn-text, .btn-icon{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    margin: 0 4px;
+  }
+
+  .btn-icon{
+    transition: transform .3s;
+  }
+
+  &.btn-red{
+    background-color: $red;
+
+    &:hover{
+      background-color: lighten($red, $lightenPercent);
+    }
+
+  }
+
+  &.btn-green{
+    background-color: $green;
+
+    &:hover{
+      background-color: lighten($green, $lightenPercent);
+    }
+
+  }
+
+  &.btn-blue{
+    background-color: $blue;
+
+    &:hover{
+      background-color: lighten($blue, $lightenPercent);
+    }
+
+  }
+
+  &.btn-yellow{
+    background-color: $yellow;
+
+    &:hover{
+      background-color: lighten($yellow, $lightenPercent);
+    }
+
+  }
+
+  &.btn-red-text{
+    background-color: #ffffff;
+    color: $red;
+  }
+
+  &.btn-green-text{
+    background-color: #ffffff;
+    color: $green;
+  }
+
+  &.btn-blue-text{
+    background-color: #ffffff;
+    color: $blue;
+  }
+
+  &.btn-yellow-text{
+    background-color: #ffffff;
+    color: $yellow;
+  }
+
+  &.btn-disabled, &.btn-disabled:hover{
+    background-color: slategrey;
+    cursor: not-allowed;
+  }
+
+  &.btn-small{
+    padding: 0;
+    width: 24px;
+    height: 24px;
+  }
+
+}

@@ -1,0 +1,25 @@
+.popup{
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(rgba(0,0,0,.4), rgba(0,0,0,.7));
+
+  .popup-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    position: relative;
+    width: 600px;
+    min-height: 400px;
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+}
