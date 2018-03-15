@@ -38,12 +38,32 @@
 </template>
 
 <script>
+    const tasks = [
+        {
+            state: 'toDo',
+            title: '111',
+            priority: 'm',
+            details: '11  1111111 11 11111 1 111 11 11',
+        },
+        {
+            state: 'toDo',
+            title: '222',
+            priority: 'h',
+            details: '22 222 222222 22222 222 2222',
+        },
+        {
+            state: 'toDo',
+            title: '333',
+            priority: 'l',
+            details: '333 3333333 333 333 333333 33',
+        }
+    ];
     export default {
         data() {
             return {
                 isRemovingDisabled: true,
                 isAddingDisabled: true,
-                taskList: [],
+                taskList: tasks,
                 isTaskEditing: false,
                 editTaskType: '',
                 clonedTask: null,

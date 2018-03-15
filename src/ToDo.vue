@@ -2,32 +2,34 @@
     <div class="task-list-type task-list-todo">
         <h2>to do</h2>
         <ul class="task-list">
-            <li class="task box-shadow"
-                v-for="(task,taskID) in taskList"
-                v-if="task.state === 'toDo'"
-                :key="taskID">
-                <div class="task-element task-priority" :class="task.priority">{{ task.priority }}</div>
-                <div class="task-element task-title">{{ task.title }}</div>
-                <div class="task-element task-details">{{task.details}}</div>
-                <div class="btn-list">
-                    <button class="btn btn-yellow-text"
-                            @click="$emit('onTaskEdit', task)">
-                        <icon name="pencil" class="btn-icon"></icon>
+            <draggable v-model="taskList" @start="drag=true" @end="drag=false" :options="{draggable:'.task'}">
+                <li class="task box-shadow"
+                    v-for="(task,taskID) in taskList"
+                    v-if="task.state === 'toDo'"
+                    :key="taskID">
+                    <div class="task-element task-priority" :class="task.priority">{{ task.priority }}</div>
+                    <div class="task-element task-title">{{ task.title }}</div>
+                    <div class="task-element task-details">{{task.details}}</div>
+                    <div class="btn-list">
+                        <button class="btn btn-yellow-text"
+                                @click="$emit('onTaskEdit', task)">
+                            <icon name="pencil" class="btn-icon"></icon>
+                        </button>
+                        <button class="btn btn-green-text"
+                                @click="$emit('onTaskDone', task)">
+                            <icon name="check" class="btn-icon"></icon>
+                        </button>
+                        <button class="btn btn-red-text"
+                                @click="$emit('onTaskRemove', task)">
+                            <icon name="trash" class="btn-icon"></icon>
+                        </button>
+                    </div>
+                    <button class="btn btn-blue btn-show-full-task" @click="$emit('onShowFullTask', task)">
+                        <icon name="eye" class="btn-icon"></icon>
+                        <span class="btn-text">Show full task</span>
                     </button>
-                    <button class="btn btn-green-text"
-                            @click="$emit('onTaskDone', task)">
-                        <icon name="check" class="btn-icon"></icon>
-                    </button>
-                    <button class="btn btn-red-text"
-                            @click="$emit('onTaskRemove', task)">
-                        <icon name="trash" class="btn-icon"></icon>
-                    </button>
-                </div>
-                <button class="btn btn-blue btn-show-full-task" @click="$emit('onShowFullTask', task)">
-                    <icon name="eye" class="btn-icon"></icon>
-                    <span class="btn-text">Show full task</span>
-                </button>
-            </li>
+                </li>
+            </draggable>
         </ul>
         <button class="btn btn-blue btn-add-task"
                 @click="$emit('onTaskAdd')">
@@ -37,9 +39,16 @@
 </template>
 
 <script>
+
+    import draggable from 'vuedraggable';
+
     export default {
+        components: {
+            draggable,
+        },
         props: ['taskList']
     }
+
 </script>
 
 <style scoped lang="scss">
