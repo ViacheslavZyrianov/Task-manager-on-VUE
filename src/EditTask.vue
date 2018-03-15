@@ -84,12 +84,20 @@
         position: relative;
         margin-right: 16px;
         font-weight: bold;
+        width: 100px;
+        display: block;
     }
 
     .task-element-name {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
+
+        .input-text{
+            width: auto;
+            flex: 1;
+        }
+
     }
 
     .task-element-priority{
@@ -148,12 +156,13 @@
         justify-content: flex-start;
         height: 300px;
 
-        .task-element-title {
+        .task-element-name {
             margin-bottom: 16px;
         }
 
         .input-textarea {
-            flex: 1 1 100%;
+            flex: 1;
+            margin-top: 16px;
         }
 
     }

@@ -63,11 +63,6 @@
         padding-top: 32px;
         border-radius: 8px;
         overflow: hidden;
-
-        &:nth-child(3n) {
-            margin-right: 0;
-        }
-
     }
 
     .task-element {
@@ -166,12 +161,6 @@
     }
 
     .btn-add-task {
-        position: fixed;
-        top: 100px;
-        left: 100px;
-        /*float: right;*/
-        /*margin-top: 24px;*/
-        /*box-shadow: 4px 4px 12px 2px rgba(0, 0, 0, .2);*/
     }
 
 </style>

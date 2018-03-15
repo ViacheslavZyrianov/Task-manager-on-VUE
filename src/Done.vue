@@ -1,9 +1,8 @@
 <template>
     <div class="task-list-type task-list-done">
         <h2>Done</h2>
-        <ul class="task-list"
-            :class="{'box-shadow': taskList[0]}">
-            <li class="task"
+        <ul class="task-list">
+            <li class="task box-shadow"
                 v-for="task in taskList"
                 v-if="task.state === 'done'">
                 <div class="task-text">{{task.title}}</div>
@@ -32,16 +31,11 @@
 
 <script>
     export default {
-        props: ['taskList'],
+        props: ['taskList']
     }
 </script>
 
 <style scoped lang="scss">
-
-    .task-list{
-        overflow: hidden;
-        border-radius: 16px;
-    }
 
     .task {
         display: flex;
@@ -49,14 +43,11 @@
         align-items: center;
         padding: 16px;
         background-color: #ffffff;
-        border-top: 2px dashed #d8d8d8;
+        border-radius: 16px;
+        margin-bottom: 24px;
 
         .input-text {
             flex-grow: 1;
-        }
-
-        &:first-child{
-            border-top: 0;
         }
 
     }

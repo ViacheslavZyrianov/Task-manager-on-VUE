@@ -23,7 +23,7 @@ label{
   border: 1px solid #d8d8d8;
 
   &:focus{
-    border: 1px solid #d8d8d8;
+    border: 1px solid #878787;
     background-color: #fafafa;
   }
 
@@ -35,12 +35,12 @@ label{
   height: 100%;
   padding: 7px;
   font-size: 1rem;
-  transition: background-color .3s;
+  transition: background-color .3s, border .3s;
   border: 1px solid #d8d8d8;
   resize: none;
 
   &:focus{
-    border: 1px solid #d8d8d8;
+    border: 1px solid #878787;
     background-color: #fafafa;
   }
 
